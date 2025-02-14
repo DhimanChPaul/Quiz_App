@@ -77,3 +77,37 @@ data class QuizModel(val qustion:String,val option1:String,val option2:String,va
         }
     }
 }
+
+//data class QuizModel(val qustion:String,val option1:String,val option2:String,val option3:String,val option4:String,val ans:String){
+//
+//}
+
+//data class QuizModel(
+//    val qustion: String,
+//    val option1: String = "",
+//    val option2: String = "",
+//    val option3: String = "",
+//    val option4: String = "",
+//    val ans: String
+//) {
+//    constructor(qustion: String, options: List<String>, ans: String) : this(
+//        qustion,
+//        options.getOrElse(0) { "" }, // Use getOrElse to avoid IndexOutOfBoundsException
+//        options.getOrElse(1) { "" },
+//        options.getOrElse(2) { "" },
+//        options.getOrElse(3) { "" },
+//        ans
+//    )
+//}
+
+
+//data class QuizModel(val qustion: String, val option1: String, val option2: String, val option3: String, val option4: String, val ans: String) {
+//    constructor(qustion: String, options: List<String>, ans: String) : this(
+//        qustion,
+//        options[0],
+//        options[1],
+//        options[2],
+//        options[3],
+//        ans
+//    )
+//}

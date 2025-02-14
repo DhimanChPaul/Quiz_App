@@ -2,6 +2,7 @@ package com.example.quiz
 
 import android.content.Intent
 import android.os.Bundle
+import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
@@ -21,7 +22,7 @@ class DatabaseQuiz : AppCompatActivity() {
 
         binding=ActivityDatabaseQuizBinding.inflate(layoutInflater)
         setContentView(binding.root)
-        list= ArrayList<QuizModel>();
+        list= ArrayList();
 
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
@@ -29,12 +30,19 @@ class DatabaseQuiz : AppCompatActivity() {
             insets
         }
 
+        Toast.makeText(this,"in the database model", Toast.LENGTH_SHORT).show()
+
         Firebase.firestore.collection("Quiz").get()
             .addOnSuccessListener { doct->
                 list.clear()
                 for(i in doct.documents){
-                   var quizModel=i.toObject(QuizModel::class.java)
-                    list.add(quizModel!!)
+                   val quizModel=i.toObject(QuizModel::class.java)
+                    if (quizModel != null) {
+                        list.add(quizModel)
+                    }
+                    else{
+                        Toast.makeText(this,"Quiz model is empty", Toast.LENGTH_LONG).show()
+                    }
                 }
 
                 binding.tvQuestion.setText(list.get(0).qustion)
