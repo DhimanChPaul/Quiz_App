@@ -1,11 +1,14 @@
 package com.example.quiz
 
-import android.os.Parcel
-import android.os.Parcelable
+//import android.os.Parcel
+//import android.os.Parcelable
 
 //data class QuizModel(val qustion:String,val option1:String,val option2:String,val option3:String,val option4:String,val ans:String){
 //
 //}
+
+
+
 //data class QuizModel{
 //
 //    var qustion:String?= null
@@ -40,47 +43,53 @@ import android.os.Parcelable
 //
 //}
 
-data class QuizModel(val qustion:String,val option1:String,val option2:String,val option3:String,val option4:String,val ans:String) :
-    Parcelable {
-
-    constructor(parcel: Parcel) : this(
-        parcel.readString().toString(),
-        parcel.readString().toString(),
-        parcel.readString().toString(),
-        parcel.readString().toString(),
-        parcel.readString().toString(),
-        parcel.readString().toString()
-    ) {
-    }
 
 
-    override fun writeToParcel(parcel: Parcel, flags: Int) {
-        parcel.writeString(qustion)
-        parcel.writeString(option1)
-        parcel.writeString(option2)
-        parcel.writeString(option3)
-        parcel.writeString(option4)
-        parcel.writeString(ans)
-    }
+//data class QuizModel(val qustion:String,val option1:String,val option2:String,val option3:String,val option4:String,val ans:String) :
+//    Parcelable {
+//
+//    constructor(parcel: Parcel) : this(
+//        parcel.readString().toString(),
+//        parcel.readString().toString(),
+//        parcel.readString().toString(),
+//        parcel.readString().toString(),
+//        parcel.readString().toString(),
+//        parcel.readString().toString()
+//    ) {
+//    }
+//
+//
+//    override fun writeToParcel(parcel: Parcel, flags: Int) {
+//        parcel.writeString(qustion)
+//        parcel.writeString(option1)
+//        parcel.writeString(option2)
+//        parcel.writeString(option3)
+//        parcel.writeString(option4)
+//        parcel.writeString(ans)
+//    }
+//
+//    override fun describeContents(): Int {
+//        return 0
+//    }
+//
+//    companion object CREATOR : Parcelable.Creator<QuizModel> {
+//        override fun createFromParcel(parcel: Parcel): QuizModel {
+//            return QuizModel(parcel)
+//        }
+//
+//        override fun newArray(size: Int): Array<QuizModel?> {
+//            return arrayOfNulls(size)
+//        }
+//    }
+//}
 
-    override fun describeContents(): Int {
-        return 0
-    }
 
-    companion object CREATOR : Parcelable.Creator<QuizModel> {
-        override fun createFromParcel(parcel: Parcel): QuizModel {
-            return QuizModel(parcel)
-        }
-
-        override fun newArray(size: Int): Array<QuizModel?> {
-            return arrayOfNulls(size)
-        }
-    }
-}
 
 //data class QuizModel(val qustion:String,val option1:String,val option2:String,val option3:String,val option4:String,val ans:String){
 //
 //}
+
+
 
 //data class QuizModel(
 //    val qustion: String,
@@ -111,3 +120,14 @@ data class QuizModel(val qustion:String,val option1:String,val option2:String,va
 //        ans
 //    )
 //}
+
+
+
+data class QuizModel(
+    val qustion: String = "",
+    val option1: String = "",
+    val option2: String = "",
+    val option3: String = "",
+    val option4: String = "",
+    val ans: String = ""
+)

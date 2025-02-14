@@ -30,7 +30,7 @@ class DatabaseQuiz : AppCompatActivity() {
             insets
         }
 
-        Toast.makeText(this,"in the database model", Toast.LENGTH_SHORT).show()
+//        Toast.makeText(this,"in the database model", Toast.LENGTH_SHORT).show()
 
         Firebase.firestore.collection("Quiz").get()
             .addOnSuccessListener { doct->

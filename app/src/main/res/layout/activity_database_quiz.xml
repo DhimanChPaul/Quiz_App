@@ -25,7 +25,7 @@
         android:layout_marginTop="10dp"
         android:background="#FFC107"
         android:backgroundTint="#FFC107"
-        android:text="How are you?"
+        android:text="who are you?"
         android:textAlignment="center"
         android:textColor="#0B0A0A"
         android:textSize="30sp"
